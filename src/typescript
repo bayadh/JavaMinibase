@@ -1,0 +1,103 @@
+Script started on 2018-11-16 12:32:07+0100
+-manaslu$ make tesst[K[Kt
+cd tests; make bmtest
+make[1]: Entering directory '/homes/nguyenav/00_EURECOM/DBSys/JavaMinibase/src/tests'
+/usr/lib/jvm/java-11-openjdk-amd64/bin/javac -classpath .:.. TestDriver.java BMTest2.java
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java  -classpath .:.. tests.BMTest2
+
+Running Buffer Management tests....
+
+  Test 1 does simple test on buffer using theFIFOalgorithmmanager operations:
+  - Allocate a bunch of new pages
+  - Write something on each one
+  - Read that something back from each one
+   (because we're buffering, this is where most of the writes happen)
+  - Free the pages again
+  Test 1 completed successfully.
+
+  Test 1 does simple test on buffer using theLIFOalgorithmmanager operations:
+  - Allocate a bunch of new pages
+  - Write something on each one
+  - Read that something back from each one
+   (because we're buffering, this is where most of the writes happen)
+  - Free the pages again
+  Test 1 completed successfully.
+
+  Test 1 does simple test on buffer using theLRUKalgorithmmanager operations:
+  - Allocate a bunch of new pages
+  - Write something on each one
+  - Read that something back from each one
+   (because we're buffering, this is where most of the writes happen)
+  - Free the pages again
+  Test 1 completed successfully.
+
+  Test 2 exercises some illegal buffer manager operations:FIFO
+  - Try to pin more pages than there are frames
+*** Pinning too many pages
+  --> Failed as expected 
+
+  - Try to free a doubly-pinned page
+*** Freeing a pinned page
+  --> Failed as expected 
+
+  - Try to unpin a page not in the buffer pool
+*** Unpinning a page not in the buffer pool
+  --> Failed as expected 
+
+  Test 2 completed successfully.
+
+  Test 2 exercises some illegal buffer manager operations:LIFO
+  - Try to pin more pages than there are frames
+*** Pinning too many pages
+  --> Failed as expected 
+
+  - Try to free a doubly-pinned page
+*** Freeing a pinned page
+  --> Failed as expected 
+
+  - Try to unpin a page not in the buffer pool
+*** Unpinning a page not in the buffer pool
+  --> Failed as expected 
+
+  Test 2 completed successfully.
+
+  Test 2 exercises some illegal buffer manager operations:LRUK
+  - Try to pin more pages than there are frames
+*** Pinning too many pages
+  --> Failed as expected 
+
+  - Try to free a doubly-pinned page
+*** Freeing a pinned page
+  --> Failed as expected 
+
+  - Try to unpin a page not in the buffer pool
+*** Unpinning a page not in the buffer pool
+  --> Failed as expected 
+
+  Test 2 completed successfully.
+
+  Test 3 exercises some of the internals of the buffer managerFIFO
+  - Allocate and dirty some new pages, one at a time, and leave some pinned
+  - Read the pages
+  Test 3 completed successfully.
+
+  Test 3 exercises some of the internals of the buffer managerLIFO
+  - Allocate and dirty some new pages, one at a time, and leave some pinned
+  - Read the pages
+  Test 3 completed successfully.
+
+  Test 3 exercises some of the internals of the buffer managerLRUK
+  - Allocate and dirty some new pages, one at a time, and leave some pinned
+  - Read the pages
+  Test 3 completed successfully.
+
+  Test 4 
+- Read the pages
+  Test 4 completed successfully.
+
+...Buffer Management tests completely successfully.
+
+make[1]: Leaving directory '/homes/nguyenav/00_EURECOM/DBSys/JavaMinibase/src/tests'
+-manaslu$ exit
+
+Script done on 2018-11-16 12:32:14+0100
